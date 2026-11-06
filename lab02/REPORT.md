@@ -21,9 +21,9 @@
 依次使用 `start-course.bat`、`start-mysql.bat`、`mysql-console.bat` 启动课程环境、数据库和 MySQL 终端。
 
 **截图：** MySQL 启动成功提示，以及终端中 `USE smartpark_lab`、`SHOW TABLES`、`DESCRIBE houseinfo` 的执行结果。可分图。
-文件名：![MySQL启动成功并执行USE命令](images/exp2_1_01_mysql_start_use.png)
-文件名：![执行SHOW TABLES查看库内表](images/exp2_1_02_show_tables_result.png)
-文件名：![DESCRIBE查看houseinfo表结构](images/exp2_1_03_describe_houseinfo_table.png)
+![MySQL启动成功并执行USE命令](images/exp2_1_01_mysql_start_use.png)
+![执行SHOW TABLES查看库内表](images/exp2_1_02_show_tables_result.png)
+![DESCRIBE查看houseinfo表结构](images/exp2_1_03_describe_houseinfo_table.png)
 说明：当前使用哪个数据库？`id` 和8个房源字段分别保存什么？
 答：smartpark_lab
 id，title房源标题,house小区名称,address房源所在地址,struct户型,area房屋面积，floor楼层信息,maketime房屋建造年份,price房屋总价
@@ -58,9 +58,9 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 - 建造年代的提取和缺失处理。
 
 可分成几张局部截图。另附面积、单价对应的 HTML 节点或网页原文。
-文件名：![解析代码与首条房源8字段控制台输出](images/exp2_2_02_parse_code_8fields_output.png)
-文件名：![面积字段对应的HTML DOM节点](images/exp2_2_03_html_node_area.png)
-文件名：![单价字段对应的HTML DOM节点](images/exp2_2_04_html_node_unit_price.png)
+![解析代码与首条房源8字段控制台输出](images/exp2_2_02_parse_code_8fields_output.png)
+![面积字段对应的HTML DOM节点](images/exp2_2_03_html_node_area.png)
+![单价字段对应的HTML DOM节点](images/exp2_2_04_html_node_unit_price.png)
 
 
 说明：两个选择方法各用在哪里？怎样确认面积和单价没有取错？
@@ -76,7 +76,7 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 - 实际停止原因（明确禁用的末页按钮 / 异常中止）：达到安全页数上限，中止
 
 **截图：** 框出提取 `href`、补全地址、循环更新地址和停止条件的代码。附前两页的运行日志，以及最终停止提示。离线实验展示快照中的href、补全结果和文件读取记录，注明“离线回放”，不算在线翻页成功。
-文件名：![翻页逻辑代码与程序运行日志](images/exp2_2_05_nextpage_code_runtime_log.png)
+![翻页逻辑代码与程序运行日志](images/exp2_2_05_nextpage_code_runtime_log.png)
 
 说明：怎样进入下一页？怎样防止重复采集或无限循环？若中途失败，说明停在哪一步。
 
@@ -92,8 +92,8 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 ### 3. 保存 CSV
 
 **截图：** CSV保存与回读代码、回读条数。框出编码、表头和数据写入部分。
-文件名：![CSV文件写入代码，含编码与表头](images/exp2_2_06_csv_write_code_encoding_header.png)
-文件名：![CSV回读代码与行数统计输出](images/exp2_2_07_csv_reread_count_rows.png)
+![CSV文件写入代码，含编码与表头](images/exp2_2_06_csv_write_code_encoding_header.png)
+![CSV回读代码与行数统计输出](images/exp2_2_07_csv_reread_count_rows.png)
 
 说明：8个字段的顺序是什么？按8个字段完全相同去重后，保存了多少条记录？
 
@@ -106,10 +106,10 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 本阶段读取第二阶段的 `data/houseinfo.csv`，不重新采集。
 
 **截图：** 框出读取CSV、按8个字段整理入库参数的代码。
-文件名：![读取CSV并组装入库参数字典/元组](images/exp2_3_01_csv_read_assemble_params.png)
+![读取CSV并组装入库参数字典/元组](images/exp2_3_01_csv_read_assemble_params.png)
 
 **截图：** 自己编写的入库代码。框出 `executemany()`、`commit()`、`rollback()`，以及关闭游标和连接的操作。另框出避免重复插入的代码。
-文件名：![MySQL入库核心代码：批量插入、事务、去重、资源释放](images/exp2_3_02_mysql_import_transaction_dedup.png)
+![MySQL入库核心代码：批量插入、事务、去重、资源释放](images/exp2_3_02_mysql_import_transaction_dedup.png)
 
 说明：每条记录怎样对应8个参数？成功、失败时分别做什么？再次运行时怎样避免重复插入？
 
@@ -122,9 +122,9 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 **截图：** MySQL 终端中的入库前后 `SELECT COUNT(*)`、重跑后的条数，以及 `SELECT ... LIMIT 5` 的结果。
 
 【在此插入截图】
-文件名：![houseinfo表结构查询结果](images/exp2_3_03_mysql_table_structure.png)
-文件名:![入库前后、重跑后count条数对比](images/exp2_3_04_mysql_count_compare_before_after.png)
-文件名：![limit5查询得到部分样本数据](images/exp2_3_05_mysql_sample_limit5_query.png)
+![houseinfo表结构查询结果](images/exp2_3_03_mysql_table_structure.png)
+![入库前后、重跑后count条数对比](images/exp2_3_04_mysql_count_compare_before_after.png)
+![limit5查询得到部分样本数据](images/exp2_3_05_mysql_sample_limit5_query.png)
 | 项目 | 实际结果 |
 |---|---|
 | 成功采集页数 |12 |
@@ -146,11 +146,11 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 
 **截图：** 三条样本的对照结果，框出面积、单价和年代。可分图。
 - 样本1（页码或URL、记录位置）：来自第 1 页，页面第 1 条
-文件名：![样本1(第一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_06_sample1_compare_web_csv_mysql.png)
+![样本1(第一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_06_sample1_compare_web_csv_mysql.png)
 - 样本2（页码或URL、记录位置）：来自第 2 页，页面第 3 条
-文件名：![样本2（跨页一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_07_sample2_compare_web_csv_mysql.png)
+![样本2（跨页一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_07_sample2_compare_web_csv_mysql.png)
 - 样本3（页码或URL、记录位置）：来自第 12 页，页面第 60 条
-文件名：![样本3（最后一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_08_sample3_compare_web_csv_mysql.png)
+![样本3（最后一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_08_sample3_compare_web_csv_mysql.png)
 
 核对结论及差异：
 本次选取首条、跨页房源、最后一条房源共三条样本，对照网页快照，对网页、CSV 文件、MySQL 数据库中的八个字段逐一比对。三处来源的标题、小区、地址、户型、面积、楼层、建造年代、单价全部一致；面积、建造年代、单价三处重点字段无乱码、截断、数值错误。说明爬虫抓取、写入 CSV、导入数据库的流程可靠，数据在传输与存储过程中没有丢失或者篡改，采集数据可信。
