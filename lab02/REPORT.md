@@ -187,7 +187,7 @@ while True:
         break
     current_url = next_full_url
     time.sleep(1)
-
+```
 
 2. 旧代码把 out_list 定义在全局。你把结果列表放在哪里？为什么？
 
