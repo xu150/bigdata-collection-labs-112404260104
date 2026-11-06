@@ -146,11 +146,11 @@ id，title房源标题,house小区名称,address房源所在地址,struct户型,
 
 **截图：** 三条样本的对照结果，框出面积、单价和年代。可分图。
 - 样本1（页码或URL、记录位置）：来自第 1 页，页面第 1 条
-![样本1(第一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_06_sample1_compare_web_csv_mysql.png)
+![样本1(第一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_06_sample1_compare_web_csv_mysql.jpg)
 - 样本2（页码或URL、记录位置）：来自第 2 页，页面第 3 条
-![样本2（跨页一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_07_sample2_compare_web_csv_mysql.png)
+![样本2（跨页一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_07_sample2_compare_web_csv_mysql.jpg)
 - 样本3（页码或URL、记录位置）：来自第 12 页，页面第 60 条
-![样本3（最后一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_08_sample3_compare_web_csv_mysql.png)
+![样本3（最后一条）：网页‑CSV‑MySQL三方对照截图](images/exp2_3_08_sample3_compare_web_csv_mysql.jpg)
 
 核对结论及差异：
 本次选取首条、跨页房源、最后一条房源共三条样本，对照网页快照，对网页、CSV 文件、MySQL 数据库中的八个字段逐一比对。三处来源的标题、小区、地址、户型、面积、楼层、建造年代、单价全部一致；面积、建造年代、单价三处重点字段无乱码、截断、数值错误。说明爬虫抓取、写入 CSV、导入数据库的流程可靠，数据在传输与存储过程中没有丢失或者篡改，采集数据可信。
